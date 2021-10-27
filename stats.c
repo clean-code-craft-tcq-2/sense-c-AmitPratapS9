@@ -9,7 +9,7 @@ int ledAlertCallCount = 0;
 
 struct Stats_list compute_statistics_list(const float* numberset, int setlength) 
 {
-    struct Stats s;
+    struct Stats_list s;
     s.average = 0;
     s.min = 0;
     s.max = 0;
