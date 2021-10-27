@@ -7,8 +7,8 @@ struct Stats_list
 };
 
                                                                                         
-struct Stats compute_statistics_list(const float* numberset, int setlength);
+struct Stats_list compute_statistics_list(const float* numberset, int setlength);
 
 typedef void (*alerter_funcptr)();
 
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats);
+void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats_list computedStats);
