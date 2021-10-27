@@ -7,7 +7,7 @@ int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
 
 
-struct Stats compute_statistics_list(const float* numberset, int setlength) 
+struct Stats_list compute_statistics_list(const float* numberset, int setlength) 
 {
     struct Stats s;
     s.average = 0;
@@ -18,18 +18,20 @@ struct Stats compute_statistics_list(const float* numberset, int setlength)
     int loopcount = 0;
     float Numbertotal = 0;
     
-// To find the max, min, average from number
+// finding min, max 
  for(loopcount=0;loopcount<setlength;loopcount++)
  {
-     // check for minimum number
+     // Minimum number assignment
      if(numberset[loopcount]<min) 
      {
         min= numberset[loopcount];
      }
+     // Maximum number assignment
     if(numberset[loopcount]> max) 
     {
        max= numberset[loopcount];
     }
+    // Average number assignment
     Numbertotal = Numbertotal + numberset[loopcount];
   }
     s.average = Numbertotal/setlength;
@@ -42,7 +44,7 @@ struct Stats compute_statistics_list(const float* numberset, int setlength)
 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
-    // check compute status greater then threshold
+    // checking compute status greater then threshold
     if(computedStats.max > maxThreshold)
     {
 	// calling the led alert function
