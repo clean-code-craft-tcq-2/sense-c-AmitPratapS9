@@ -42,7 +42,7 @@ struct Stats_list compute_statistics_list(const float* numberset, int setlength)
 }
 
 
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
+void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats_list computedStats)
 {
     // checking compute status greater then threshold
     if(computedStats.max > maxThreshold)
